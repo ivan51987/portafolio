@@ -1,0 +1,11 @@
+/* Estilo general */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Suavizado de scroll para la navegación */
+html {
+  scroll-behavior: smooth;
+}
