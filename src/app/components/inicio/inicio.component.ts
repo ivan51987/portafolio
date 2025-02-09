@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-hero',
+  selector: 'app-inicio',
   imports: [],
-  templateUrl: './hero.component.html',
-  styleUrl: './hero.component.css'
+  templateUrl: './inicio.component.html',
+  styleUrl: './inicio.component.css'
 })
-export class HeroComponent {
+export class InicioComponent {
   constructor(private router: Router) {}
 
   goToHojaDeVida(): void {
