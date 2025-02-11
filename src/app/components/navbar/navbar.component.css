@@ -1,0 +1,56 @@
+/* Estilos generales */
+nav {
+  background-color: #1f2937; /* bg-gray-800 */
+  padding: 1rem;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Botón del menú hamburguesa */
+button {
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Estilos del menú en móviles */
+.menu {
+  position: absolute;
+  top: 64px; /* Justo debajo del navbar */
+  left: 0;
+  width: 100%;
+  background: rgba(31, 41, 55, 0.95); /* bg-gray-800 con opacidad */
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  transform: translateY(-100%);
+}
+
+.menu.open {
+  transform: translateY(0);
+}
+
+/* Estilos del menú en escritorio */
+@media (min-width: 768px) {
+  .menu {
+    position: static;
+    width: auto;
+    background: transparent;
+    transform: translateY(0);
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  button {
+    display: none; /* Ocultar el botón hamburguesa en escritorio */
+  }
+}

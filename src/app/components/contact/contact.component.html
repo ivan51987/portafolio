@@ -4,16 +4,16 @@
     <p class="mt-4 text-gray-400 text-lg">Puedes encontrarme en mis redes sociales o enviarme un mensaje.</p>
 
     <div class="flex justify-center mt-8 space-x-6">
-      <a href="https://github.com/talivan5" class="text-yellow-400 text-3xl hover:text-yellow-500 transition">
+      <a href="https://github.com/talivan5" target="_blank" class="text-yellow-400 text-3xl hover:text-yellow-500 transition">
         <i class="fab fa-github"></i>
       </a>
-      <a href="https://www.linkedin.com/in/ivan-flores-flores/" class="text-blue-500 text-3xl hover:text-blue-600 transition">
+      <a href="https://www.linkedin.com/in/ivan-flores-flores/" target="_blank" class="text-blue-500 text-3xl hover:text-blue-600 transition">
         <i class="fab fa-linkedin"></i>
       </a>
-      <a href="https://x.com/talivan51987" class="text-blue-400 text-3xl hover:text-blue-500 transition">
+      <a href="https://x.com/talivan51987" target="_blank" class="text-blue-400 text-3xl hover:text-blue-500 transition">
         <i class="fab fa-twitter"></i>
       </a>
-      <a href="https://www.instagram.com/ivan_flores_flores/" class="text-pink-500 text-3xl hover:text-pink-600 transition">
+      <a href="https://www.instagram.com/ivan_flores_flores/" target="_blank" class="text-pink-500 text-3xl hover:text-pink-600 transition">
         <i class="fab fa-instagram"></i>
       </a>
     </div>
@@ -21,42 +21,42 @@
     <div class="mt-12 max-w-lg mx-auto bg-gray-800 p-8 rounded-lg shadow-lg">
       <h3 class="text-xl font-semibold text-yellow-400 mb-4">Envíame un mensaje</h3>
       <form (ngSubmit)="enviarCorreo()" #contactForm="ngForm" class="space-y-4">
-        <input 
-          [(ngModel)]="nombre" 
-          name="nombre" 
-          placeholder="Nombre" 
-          class="w-full p-3 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" 
+        <input
+          [(ngModel)]="nombre"
+          name="nombre"
+          placeholder="Nombre"
+          class="w-full p-3 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
           required
           aria-label="Nombre"
         />
-    
-        <input 
-          [(ngModel)]="correo" 
-          name="correo" 
-          placeholder="Correo" 
-          class="w-full p-3 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" 
+
+        <input
+          [(ngModel)]="correo"
+          name="correo"
+          placeholder="Correo"
+          class="w-full p-3 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
           required
           aria-label="Correo"
         />
-    
-        <textarea 
-          [(ngModel)]="mensaje" 
-          name="mensaje" 
-          placeholder="Mensaje" 
-          rows="4" 
-          class="w-full p-3 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" 
+
+        <textarea
+          [(ngModel)]="mensaje"
+          name="mensaje"
+          placeholder="Mensaje"
+          rows="4"
+          class="w-full p-3 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
           required
           aria-label="Mensaje"
         ></textarea>
-    
-        <button 
-          type="submit" 
+
+        <button
+          type="submit"
           class="w-full bg-yellow-500 hover:bg-yellow-600 p-3 rounded font-semibold text-gray-900 transition"
         >
           Enviar Mensaje
         </button>
       </form>
     </div>
-    
+
   </div>
 </section>
