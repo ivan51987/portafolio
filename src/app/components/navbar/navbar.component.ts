@@ -16,7 +16,5 @@ export class NavbarComponent {
   toggleMenu(): void {
     this.menuOpen = !this.menuOpen;
     console.log("Menú presionado:", this.menuOpen);
-    // Actualiza la vista
-    this.cdr.detectChanges(); // Si es necesario
   }
 }

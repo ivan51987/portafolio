@@ -13,4 +13,8 @@ export class InicioComponent {
   goToHojaDeVida(): void {
     this.router.navigate(['/hoja-de-vida']);
   }
+
+  goToPortfolio(): void {
+    this.router.navigate(['/hoja-de-vida']);
+  }
 }
