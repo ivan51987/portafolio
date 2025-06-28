@@ -1,0 +1,68 @@
+<section 
+  id="portfolio" 
+  [ngClass]="colorPalettes[selectedPalette].bg + ' ' + colorPalettes[selectedPalette].text + ' py-20 transition-colors duration-500 ease-in-out font-sans'"
+>
+  <div class="container mx-auto px-6">
+    
+    <!-- Selector de Paleta -->
+    <div class="flex justify-end mb-8">
+      <button 
+        *ngFor="let palette of colorPalettes; let i = index"
+        (click)="changePalette(i)"
+        class="w-8 h-8 rounded-full mx-1 border-2 transition-all duration-300 focus:outline-none"
+        [ngClass]="[
+          palette.bg,
+          selectedPalette === i ? 'ring-2 ring-yellow-400 scale-110' : 'opacity-80 hover:scale-105 hover:opacity-100'
+        ]"
+        [attr.aria-label]="'Paleta ' + (i + 1)">
+      </button>
+    </div>
+
+    <!-- Título -->
+    <h2 
+      [ngClass]="colorPalettes[selectedPalette].accent + ' text-4xl font-bold text-center mb-12 transition-colors duration-300'"
+    >
+      Mis Proyectos
+    </h2>
+
+    <!-- Grid de Proyectos -->
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div 
+        *ngFor="let project of projects" 
+        [ngClass]="colorPalettes[selectedPalette].card + ' rounded-lg shadow-md p-6 transition-transform transform hover:-translate-y-1 hover:shadow-2xl duration-300 ease-in-out'"
+      >
+        <!-- Imagen del Proyecto -->
+        <img 
+          *ngIf="project.image" 
+          [src]="project.image" 
+          [alt]="project.title" 
+          class="w-full h-48 object-cover rounded-md mb-4 transition-transform duration-300 hover:scale-105"
+        />
+
+        <!-- Título del Proyecto -->
+        <h3 
+          [ngClass]="colorPalettes[selectedPalette].accent + ' text-xl font-semibold mb-2 transition-colors duration-300'"
+        >
+          {{ project.title }}
+        </h3>
+
+        <!-- Descripción -->
+        <p [ngClass]="colorPalettes[selectedPalette].paragraph + ' leading-relaxed'">
+          {{ project.description }}
+        </p>
+
+
+
+        <!-- Enlace -->
+        <a 
+          [href]="project.url" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          [ngClass]="colorPalettes[selectedPalette].link + ' inline-block mt-4 font-semibold transition duration-300'"
+        >
+          Ver más →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

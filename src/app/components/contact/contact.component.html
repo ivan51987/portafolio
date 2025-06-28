@@ -1,62 +1,84 @@
-<section id="contact" class="py-16 bg-gray-900 text-white">
-  <div class="container mx-auto text-center">
-    <h2 class="text-3xl font-bold">Contáctame</h2>
-    <p class="mt-4 text-gray-400 text-lg">Puedes encontrarme en mis redes sociales o enviarme un mensaje.</p>
+<section id="contact" class="py-20 bg-gray-900 text-white">
+  <div class="container mx-auto text-center px-6">
 
-    <div class="flex justify-center mt-8 space-x-6">
-      <a href="https://github.com/talivan5" target="_blank" class="text-yellow-400 text-3xl hover:text-yellow-500 transition">
+    <!-- Título -->
+    <h2 class="text-4xl md:text-5xl font-bold text-yellow-400 mb-4 animate-fade-in">
+      Contáctame
+    </h2>
+    <p class="text-lg text-gray-400 mb-10 animate-fade-in delay-100">
+      Puedes encontrarme en mis redes sociales o enviarme un mensaje directo.
+    </p>
+
+    <!-- Redes Sociales -->
+    <div class="flex flex-wrap justify-center gap-6 text-3xl animate-fade-in delay-200">
+      <a href="https://github.com/talivan5" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+         class="text-yellow-400 hover:text-yellow-500 transition">
         <i class="fab fa-github"></i>
       </a>
-      <a href="https://www.linkedin.com/in/ivan-flores-flores/" target="_blank" class="text-blue-500 text-3xl hover:text-blue-600 transition">
+      <a href="https://www.linkedin.com/in/ivan-flores-flores/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+         class="text-blue-500 hover:text-blue-600 transition">
         <i class="fab fa-linkedin"></i>
       </a>
-      <a href="https://x.com/talivan51987" target="_blank" class="text-blue-400 text-3xl hover:text-blue-500 transition">
+      <a href="https://x.com/talivan51987" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter"
+         class="text-blue-400 hover:text-blue-500 transition">
         <i class="fab fa-twitter"></i>
       </a>
-      <a href="https://www.instagram.com/ivan_flores_flores/" target="_blank" class="text-pink-500 text-3xl hover:text-pink-600 transition">
+      <a href="https://www.instagram.com/ivan_flores_flores/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+         class="text-pink-500 hover:text-pink-600 transition">
         <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://wa.me/59168340505" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+         class="text-green-500 hover:text-green-600 transition">
+        <i class="fab fa-whatsapp"></i>
       </a>
     </div>
 
-    <div class="mt-12 max-w-lg mx-auto bg-gray-800 p-8 rounded-lg shadow-lg">
-      <h3 class="text-xl font-semibold text-yellow-400 mb-4">Envíame un mensaje</h3>
-      <form (ngSubmit)="enviarCorreo()" #contactForm="ngForm" class="space-y-4">
+    <!-- Formulario de contacto -->
+    <div class="mt-16 max-w-2xl mx-auto bg-gray-800 p-8 rounded-xl shadow-xl animate-fade-in delay-300">
+      <h3 class="text-2xl font-semibold text-yellow-400 mb-6">Envíame un mensaje</h3>
+      
+      <form (ngSubmit)="enviarCorreo()" #contactForm="ngForm" class="space-y-5">
+        <!-- Nombre -->
         <input
           [(ngModel)]="nombre"
           name="nombre"
-          placeholder="Nombre"
-          class="w-full p-3 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+          type="text"
           required
+          placeholder="Tu nombre"
           aria-label="Nombre"
+          class="w-full p-4 rounded bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
         />
 
+        <!-- Correo -->
         <input
           [(ngModel)]="correo"
           name="correo"
-          placeholder="Correo"
-          class="w-full p-3 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+          type="email"
           required
+          placeholder="Tu correo"
           aria-label="Correo"
+          class="w-full p-4 rounded bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
         />
 
+        <!-- Mensaje -->
         <textarea
           [(ngModel)]="mensaje"
           name="mensaje"
-          placeholder="Mensaje"
-          rows="4"
-          class="w-full p-3 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+          rows="5"
           required
+          placeholder="Escribe tu mensaje"
           aria-label="Mensaje"
+          class="w-full p-4 rounded bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition resize-none"
         ></textarea>
 
+        <!-- Botón -->
         <button
           type="submit"
-          class="w-full bg-yellow-500 hover:bg-yellow-600 p-3 rounded font-semibold text-gray-900 transition"
+          class="w-full bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 rounded transition duration-300"
         >
           Enviar Mensaje
         </button>
       </form>
     </div>
-
   </div>
 </section>

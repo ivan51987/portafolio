@@ -1,65 +1,52 @@
-<section class="bg-black text-white min-h-screen flex items-center py-14 relative overflow-hidden" id="inicio">
-  <!-- Fondo con gradiente y formas geométricas -->
-  <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-    <!-- Gradiente de fondo -->
-    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-black via-gray-900 to-yellow-900 opacity-90"></div>
+<section id="inicio" class="relative overflow-hidden bg-black text-white min-h-screen flex items-center py-14">
+  <!-- Fondo con gradiente -->
+  <div class="absolute inset-0 z-0 bg-gradient-to-br from-black via-gray-900 to-yellow-900 opacity-90"></div>
 
-    <!-- Formas geométricas -->
-    <div class="absolute top-0 left-0 w-full h-full">
-      <!-- Triángulo grande -->
-      <div class="absolute top-0 left-0 w-64 h-64 bg-yellow-400 opacity-20 transform rotate-45 -translate-x-1/2 -translate-y-1/2"></div>
-      <!-- Círculo grande -->
-      <div class="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full opacity-10 transform translate-x-1/2 translate-y-1/2"></div>
-      <!-- Líneas diagonales -->
-      <div class="absolute top-1/2 left-1/2 w-200 h-1 bg-yellow-400 opacity-20 transform -translate-x-1/2 -translate-y-1/2 rotate-45"></div>
-      <div class="absolute top-1/2 left-1/2 w-200 h-1 bg-yellow-400 opacity-20 transform -translate-x-1/2 -translate-y-1/2 rotate-135"></div>
-    </div>
+  <!-- Formas geométricas -->
+  <div class="absolute inset-0 z-0">
+    <div class="absolute w-64 h-64 bg-yellow-400 opacity-20 transform rotate-45 -translate-x-1/2 -translate-y-1/2 top-0 left-0"></div>
+    <div class="absolute w-96 h-96 bg-white rounded-full opacity-10 transform translate-x-1/2 translate-y-1/2 bottom-0 right-0"></div>
+    <div class="absolute w-200 h-1 bg-yellow-400 opacity-20 transform -translate-x-1/2 -translate-y-1/2 rotate-45 top-1/2 left-1/2"></div>
+    <div class="absolute w-200 h-1 bg-yellow-400 opacity-20 transform -translate-x-1/2 -translate-y-1/2 rotate-135 top-1/2 left-1/2"></div>
   </div>
 
-  <!-- Contenido principal -->
+  <!-- Contenido -->
   <div class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center relative z-10">
-    <!-- Text Section -->
+    <!-- Texto -->
     <div class="md:w-1/2 text-center md:text-left animate-fade-in-left">
-      <h1 class="text-4xl md:text-6xl font-extrabold text-yellow-400 leading-tight drop-shadow-lg transform transition-all duration-700 hover:scale-105">
+      <h1 class="text-4xl md:text-6xl font-extrabold text-yellow-400 leading-tight drop-shadow-lg transition duration-700 hover:scale-105">
         Hola, soy Ivan Flores Flores
       </h1>
-      <p class="mt-4 text-lg text-gray-300 animate-fade-in-left delay-100">
-        Desarrollador Full Stack | Especialista en IA | Innovador Tecnológico
+      <p class="mt-4 text-lg text-gray-300 animate-fade-in delay-100">
+        Desarrollador Full Stack | Innovador Tecnológico
       </p>
-      <div class="mt-8 animate-fade-in-left delay-200">
+      <div class="mt-8 animate-fade-in delay-200">
         <button
-          class="bg-gradient-to-r from-yellow-400 to-yellow-600 text-black py-3 px-10 rounded-full shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-l"
-          (click)="goToHojaDeVida()"
+          aria-label="Ver hoja de vida de Iván Flores"
+          class="bg-gradient-to-r from-yellow-400 to-yellow-600 text-black py-3 px-10 rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 hover:bg-gradient-to-l"
+          (click)="generarCV()"
         >
           Ver Hoja de Vida
         </button>
       </div>
     </div>
 
-    <!-- Image Section -->
-    <div class="mt-8 md:mt-0 md:w-1/2 flex flex-col items-center animate-fade-in-right">
-      <div class="relative">
+    <!-- Imagen -->
+    <div class="mt-12 md:mt-0 md:w-1/2 flex justify-center animate-fade-in-right">
+      <div class="relative group">
         <img
           src="assets/images/ivan-flores.jpeg"
           alt="Iván Flores Flores"
-          class="w-96 h-96 rounded-full object-cover shadow-2xl border-4 border-yellow-400 transition-transform duration-500 ease-in-out hover:scale-110 hover:rotate-3"
-        >
-        <div class="absolute -inset-4 rounded-full border-4 border-yellow-400 opacity-0 hover:opacity-100 transition-opacity duration-500 ease-in-out"></div>
-      </div>
-      <div class="mt-6">
-        <button
-          class="bg-gradient-to-r from-black to-gray-800 text-yellow-400 py-3 px-10 rounded-full shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-l"
-          (click)="goToPortfolio()"
-        >
-          Ver Portafolio
-        </button>
+          loading="lazy"
+          class="w-80 h-80 md:w-96 md:h-96 rounded-full object-cover shadow-2xl border-4 border-yellow-400 transition-transform duration-500 ease-in-out group-hover:scale-110 group-hover:rotate-3"
+        />
+        <div class="absolute inset-0 rounded-full border-4 border-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
       </div>
     </div>
   </div>
 
-  <!-- Background Animations -->
-  <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-    <!-- Floating Circles -->
+  <!-- Animaciones flotantes -->
+  <div class="absolute inset-0 z-0 pointer-events-none">
     <div class="absolute top-10 left-20 w-8 h-8 bg-yellow-400 rounded-full opacity-40 animate-float-1"></div>
     <div class="absolute top-32 right-16 w-6 h-6 bg-white rounded-full opacity-70 animate-float-2"></div>
     <div class="absolute bottom-10 left-40 w-10 h-10 bg-yellow-400 rounded-full opacity-40 animate-float-3"></div>
@@ -67,7 +54,7 @@
     <div class="absolute top-24 left-1/3 w-5 h-5 bg-yellow-300 rounded-full opacity-50 animate-float-5"></div>
     <div class="absolute bottom-32 right-1/4 w-7 h-7 bg-white rounded-full opacity-50 animate-float-6"></div>
 
-    <!-- Glow Effect -->
+    <!-- Resplandor central -->
     <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-radial from-blue-500 to-transparent rounded-full opacity-20 blur-3xl animate-glow"></div>
   </div>
 </section>
